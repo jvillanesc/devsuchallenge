@@ -1,0 +1,55 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    url: jdbc:h2:mem:TEST;DB_CLOSE_DELAY=-1;
+    platform: h2
+    password: ''
+  h2:
+    console:
+      enabled: 'true'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      auto-offset-reset: latest
+      group-id: grupo-operacion
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            use:
+              type:
+                headers: false
+            value:
+              default:
+                type: com.devsu.cuentaapp.dto.OperacionDto
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: '*'
+
+FAKE_CONSUMER_DTO_TOPIC: topico-operacion
+
+cliente-service:
+#  http-client:
+#    read-timeout: 3000
+#    write-timeout: 3000
+#    connect-timeout: 3000
+#    response-timeout: 3000
+#  retry:
+#    max-retry: 3
+#    retry-interval: 3000
+  urls:
+    base-url: http://localhost:8082/
+    get-cliente-url: /clientes/{identificacion}
+

@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "a2e35f3d-64c0-4d05-8ab3-5d0e4d99849b",
+		"name": "MSV Cliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9983530"
+	},
+	"item": [
+		{
+			"name": "Registrar Cliente (Sincrono 1MSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Maria Santos\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 25,\r\n    \"identificacion\": \"43163056\",\r\n    \"direccion\": \"Av. Mariscal Miller 1930\",\r\n    \"telefono\": \"991279833\",\r\n    \"contrasena\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Contraseña  (Sincrono 1MSV)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contrasenaActual\": \"43163056\",\r\n    \"contrasenaNueva\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Cliente  (Sincrono 1MSV)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genero\": \"F\",\r\n    \"direccion\": \"Av. Mariscal Miller 1980\",\r\n    \"telefono\": \"991279100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cliente  (Sincrono 1MSV)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 25,\r\n    \"identificacion\": \"43163052\",\r\n    \"direccion\": \"Av. Mariscal Miller 1930\",\r\n    \"telefono\": \"991279833\",\r\n    \"contrasena\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Cliente  (Sincrono 1MSV)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 25,\r\n    \"identificacion\": \"43163052\",\r\n    \"direccion\": \"Av. Mariscal Miller 1930\",\r\n    \"telefono\": \"991279833\",\r\n    \"contrasena\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bloquear Cuenta  (Asincrono 2MSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoOperacion\": \"B\",\r\n    \"contrasena\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056/cuentas",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activar Cuenta  (Asincrono 2MSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoOperacion\": \"A\",\r\n    \"contrasena\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/clientes/43163056/cuentas",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"clientes",
+						"43163056",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8082",
+			"type": "string"
+		}
+	]
+}

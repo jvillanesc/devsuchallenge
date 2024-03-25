@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "d2a9a4f6-6bb4-4868-b4c2-bc5557364bed",
+		"name": "MSV Cuenta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9983530"
+	},
+	"item": [
+		{
+			"name": "Crear Cuenta  (Sincrono 2MSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nroCuenta\": \"237568\",\r\n    \"tipoCuenta\": \"C\",\r\n    \"saldoInicial\": 30.5,\r\n    \"identificacionCliente\": \"43163056\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/cuentas",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Movimiento  (Sincrono 1MSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": 60,\r\n    \"tipoMovimiento\": \"D\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/cuentas/237568/movimientos",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"cuentas",
+						"237568",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuenta x Nro Cta (Sincrono 1MSV)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/cuentas/237568",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"cuentas",
+						"237568"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuentas Activas  (Sincrono 1MSV)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/cuentas",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Movimientos x Nro Cta  (Sincrono 1MSV)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/cuentas/237568/movimientos",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"cuentas",
+						"237568",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Movimientos x Usuario y Fecha  (Sincrono 1MSV)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/movimientos?cliente=43163056&fecha=2024-03-24",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"movimientos"
+					],
+					"query": [
+						{
+							"key": "cliente",
+							"value": "43163056"
+						},
+						{
+							"key": "fecha",
+							"value": "2024-03-24"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
